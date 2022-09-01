@@ -7,8 +7,10 @@ IdentityCounter;
 // Initialize plugin by creating counter collection in database.
 exports.initialize = function (connection) {
   try {
+    console.log(connection)
     IdentityCounter = connection.model('IdentityCounter');
   } catch (ex) {
+    //console.log(ex)
     if (ex.name === 'MissingSchemaError') {
       // Create new counter schema.
       counterSchema = new mongoose.Schema({
