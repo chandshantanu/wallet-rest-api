@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:mmucito/ewallet-rest-api.git"
+    "url": "git@github.com:chandshantanu/ewallet-rest-api.git"
   },
   "keywords": [
     "express",
