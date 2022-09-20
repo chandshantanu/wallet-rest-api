@@ -53,6 +53,7 @@ exports.transfer = async (req, res, next) => {
     res.json(transferResponse);    
     
   } catch (error) {
+    console.log(error)
     next(error);
   }
 };

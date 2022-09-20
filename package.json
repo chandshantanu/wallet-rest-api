@@ -2,7 +2,7 @@
   "name": "ewallet-rest-api",
   "version": "1.0.0",
   "description": "E-Wallet Rest Api Example. Using Node.js, Express and MongoDB.",
-  "author": "Martín Mucito <martin.mucito@gmail.com>",
+  "author": "shantanu chandra",
   "main": "src/index.js",
   "private": false,
   "license": "MIT",

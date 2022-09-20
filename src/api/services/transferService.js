@@ -6,10 +6,11 @@ const APIError = require('../utils/APIError');
 const httpStatus = require('http-status');
 const Customer = require('../models/customer.model');
 const Transaction = require('../models/transaction.model');
+const { Console } = require('console');
 
 exports.transfer = async (accountNumber, amount, destinationAccountNumber) => {
     const reference = uuidv4();
-
+  
     const transaction = new Transaction();
     transaction.amount = -amount;
     transaction.operation = 'transfer';
@@ -25,7 +26,6 @@ exports.transfer = async (accountNumber, amount, destinationAccountNumber) => {
     transactionBeneficiary.accountNumber = destinationAccountNumber;
     transactionBeneficiary.reference = 'transfer_from_account:' + accountNumber;
     const savedTransactionBeneficiary = await transactionBeneficiary.save();
-
     const response = { transaction: transaction.transform(), customer: savedCustomer.transformBalance() }
     
     return response;

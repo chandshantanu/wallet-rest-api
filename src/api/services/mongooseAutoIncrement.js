@@ -7,7 +7,7 @@ IdentityCounter;
 // Initialize plugin by creating counter collection in database.
 exports.initialize = function (connection) {
   try {
-    console.log(connection)
+    //console.log(connection)
     IdentityCounter = connection.model('IdentityCounter');
   } catch (ex) {
     //console.log(ex)

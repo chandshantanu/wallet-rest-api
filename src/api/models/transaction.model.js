@@ -91,8 +91,10 @@ transactionSchema.post('save', async function save(doc, next) {
         transFee.accountNumber = this.accountNumber;
         transFee.reference = 'fee_from_transaction:' + this._id;
         const savedTransFee = await transFee.save();
+        console.log("llllllllllllll")
 
-        const masterAccount = await Customer.getMasterAccount();   
+        const masterAccount = await Customer.getMasterAccount();
+        //console.log("llllllllllllll")   
         masterAccount.balance -= savedTransFee.amount;
         const savedMasterAccount = await masterAccount.save();
 
